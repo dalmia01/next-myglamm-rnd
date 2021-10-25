@@ -33,10 +33,6 @@ const Home: NextPage = () => {
           </button>
 
           <Portal
-            show={modal}
-            close={() => Toggle(type)}
-            title="Dynamic Title"
-            placedAt={type}
           >
             <Modal
               show={modal}
