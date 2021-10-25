@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clickMe {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.modalContainer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba($color: #000000, $alpha: 0.35);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+
+  .modal {
+    position: fixed;
+    right: auto;
+    left: auto;
+
+    &.bottom-modal {
+      top: "auto";
+      bottom: 0;
+    }
+
+    &.center-modal {
+      top: "auto";
+      bottom: "auto";
+    }
+
+    background-color: rgba(255, 255, 255, 1);
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    border-radius: 20px 20px 0px 0px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    &_header {
+      position: relative;
+
+      &-title {
+        text-align: center;
+      }
+
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent;
+      }
+    }
+
+    &_content {
+      padding: 2rem 0;
+    }
+  }
+}
+
+.modalContainer.show {
+  visibility: visible;
+  opacity: 1;
+}
